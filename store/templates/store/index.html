@@ -1,0 +1,15 @@
+{% extends 'layout/main.html' %}
+{% block title %} index {% endblock %}
+
+{% block body %}
+    <a class="btn btn-block btn-outline-success" href="{% url 'create' %}">Create a new book</a>
+    <br>
+    {% for book in books %}
+        <h2>{{ book.title }}</h2>
+        <h5><b>{{ book.author }}</b></h5>
+        <p>{{ book.content }}</p>
+        <a class="btn btn-outline-danger" href="{% url 'delete' book.id %}">Delete</a>
+        <a class="btn btn-outline-warning" href="{% url 'edit' book.id %}">edit</a>
+        <hr>
+    {% endfor %}
+{% endblock %}
