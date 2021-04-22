@@ -4,6 +4,8 @@
 {% block body %}
     <a class="btn btn-block btn-outline-success" href="{% url 'create' %}">Create a new book</a>
     <br>
+    <a class="btn btn-block btn-outline-success"href="{% url 'createCat' %}">Create a new Category</a>
+    <br>
     {% for book in books %}
         <h2>{{ book.title }}</h2>
         <h5><b>{{ book.author }}</b></h5>

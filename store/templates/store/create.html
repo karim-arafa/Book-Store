@@ -1,10 +1,14 @@
 {% extends 'layout/main.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
 {% block title %} create {% endblock %}
 
 {% block body %}
     <form action="{% url 'create' %}" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">add book</button>
+        {{ form|crispy }}
+        <br>
+        <button type="submit"class="btn btn-block btn-outline-primary">add book</button>
+        <br>
     </form>
 {% endblock %}

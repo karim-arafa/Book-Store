@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import StoreForm
+from .forms import StoreForm,CatForm
 from .models import Store
 
 
@@ -16,6 +16,15 @@ def create(request):
         form.save()
         return redirect('index')
     return render(request, 'store/create.html', {
+        'form': form
+    })
+
+def createCat(request):
+    form = CatForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return redirect('index')
+    return render(request,'store/createCat.html',{
         'form': form
     })
 

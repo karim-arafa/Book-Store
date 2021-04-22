@@ -1,10 +1,13 @@
 {% extends 'layout/main.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
 {% block title %} edit {% endblock %}
 
 {% block body %}
     <form action="{% url 'edit' book.id %}" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">update</button>
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-block btn-outline-primary">update</button>
+        <br>
     </form>
 {% endblock %}
