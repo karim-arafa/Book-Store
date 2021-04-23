@@ -1,0 +1,16 @@
+{% load crispy_forms_filters %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+<h2>login page</h2>
+<form action="{% url "login" %}" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn-outline-primary">Login</button>
+</form>
+</body>
+</html> 
