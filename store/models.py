@@ -39,7 +39,7 @@ class Store(models.Model):
     categories = models.ManyToManyField(Category)
     tag = models.ForeignKey(Tag, null=True, blank=True, on_delete=models.CASCADE)
     isbn = models.OneToOneField(Isbn, on_delete=models.CASCADE, null=True, blank=True)
-    thumb = models.ImageField(upload_to='books',null=True,blank=True)
+    #thumb = models.ImageField(upload_to='books',null=True,blank=True)
 
     def __str__(self):
         return self.title

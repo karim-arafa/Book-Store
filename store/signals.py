@@ -13,7 +13,7 @@ def after_book_creation(sender, instance, created, *args, **kwargs):
 
         instance.isbn = isbn_instance
 
-        isbn_instance.save()
+        instance.save()
 
         # send_mail('New Book{}', format(instance.title), '')
     else:
