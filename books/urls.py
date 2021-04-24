@@ -20,7 +20,8 @@ urlpatterns = [
     path('',include("django.contrib.auth.urls")),
     path("", include('accounts.urls')),
     path('admin/', admin.site.urls),
-    path('store/', include('store.urls'))
+    path('store/', include('store.urls')),
+    path('api/store/', include('store.api.urls'))
 ]
 from django.conf import settings
 

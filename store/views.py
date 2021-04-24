@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 @permission_required(["store.view_store"], raise_exception=True)
 def index(request):
     books = Store.objects.all()
-    return render(request, 'store/index.html', {
+    return render(request, 'book_store/index.html', {
         "books": books
     })
 
@@ -18,7 +18,7 @@ def create(request):
     if form.is_valid():
         form.save()
         return redirect('index')
-    return render(request, 'store/create.html', {
+    return render(request, 'book_store/create.html', {
         'form': form
     })
 
@@ -28,7 +28,7 @@ def createCat(request):
     if form.is_valid():
         form.save()
         return redirect('index')
-    return render(request, 'store/createCat.html', {
+    return render(request, 'book_store/createCat.html', {
         'form': form
     })
 
@@ -39,7 +39,7 @@ def edit(request, id):
     if form.is_valid():
         form.save()
         return redirect('index')
-    return render(request, 'store/edit.html', {
+    return render(request, 'book_store/edit.html', {
         'form': form,
         'book': book
     })

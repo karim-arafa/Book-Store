@@ -1,12 +1,12 @@
 from django.contrib import admin
-from .models import Store, Isbn, Category, Tag
+from .models import Store, Category, Tag,Isbn
 from .forms import StoreForm, CatForm
 
 
 # Register your models here.
 class StoreAdmin(admin.ModelAdmin):
     form = StoreForm
-    list_display = ("title", "author", "content")
+    list_display = ("title", "author","isbn")
     list_filter = ("categories",)
     search_fields = ("title",)
 
